@@ -1,22 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<AssemblyName>thZero.NetCore.Library.Data.Repository</AssemblyName>
 		<PackageId>thZero.NetCore.Library.Data.Repository</PackageId>
-		<PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
 		<Description />
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicenseUrl>
 		<RepositoryUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
-		<Authors>thZero.com</Authors>
-		<PackageProjectUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</PackageProjectUrl>
-		<Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</PackageProjectUrl>
+    <Authors>thZero.com</Authors>
 	</PropertyGroup>
 
 	<ItemGroup>
