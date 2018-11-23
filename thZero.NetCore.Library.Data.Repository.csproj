@@ -4,18 +4,18 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<AssemblyName>thZero.NetCore.Library.Data.Repository</AssemblyName>
 		<PackageId>thZero.NetCore.Library.Data.Repository</PackageId>
-		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Description></Description>
+    <Authors>thZero.com</Authors>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-		<Description />
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicenseUrl>
-		<RepositoryUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</RepositoryUrl>
-		<RepositoryType>GitHub</RepositoryType>
     <PackageProjectUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</PackageProjectUrl>
-    <Authors>thZero.com</Authors>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/thzero/thZero.NetCore.Library.Data.Repository</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
