@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
 		<AssemblyName>thZero.NetCore.Library.Data.Repository</AssemblyName>
 		<PackageId>thZero.NetCore.Library.Data.Repository</PackageId>
     <Description></Description>
