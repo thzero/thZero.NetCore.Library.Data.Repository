@@ -21,7 +21,7 @@ using System;
 
 namespace thZero.Data.Repository
 {
-	public abstract class BaseRepository : IRepository
+	public abstract class RepositoryBase : IRepository
 	{
 		#region Public Methods
 		public abstract void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
