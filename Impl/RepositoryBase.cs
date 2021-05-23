@@ -17,14 +17,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
  * ------------------------------------------------------------------------- */
 
-using System;
+using thZero.Responses;
 
 namespace thZero.Data.Repository
 {
-	public abstract class RepositoryBase : IRepository
-	{
-		#region Public Methods
-		public abstract void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
-		#endregion
-	}
+    public abstract class RepositoryBase : IRepository
+    {
+        #region Public Methods
+        public abstract void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
+        #endregion
+
+        #region Protected Methods
+        protected TResult Error<TResult>(TResult result)
+             where TResult : SuccessResponse
+        {
+            result.Success = false;
+            return result;
+        }
+        #endregion
+    }
 }

@@ -17,16 +17,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
  * ------------------------------------------------------------------------- */
 
-using System;
-
 namespace thZero.Data.Repository
 {
-	public interface IRepository
-	{
-		void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
-	}
+    public interface IRepository
+    {
+        void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
+    }
 
-	public interface IRepositoryConnectionConfiguration
-	{
-	}
+    public interface IRepositoryConnectionConfiguration
+    {
+    }
 }
