@@ -97,7 +97,7 @@ namespace thZero.Data.Repository
         #endregion
     }
 
-    public abstract class RepositoryBase<TConfig, TRepository> : RepositoryBase<TConfig>, IRepository
+    public abstract class RepositoryBase<TRepository, TConfig> : RepositoryBase<TConfig>, IRepository
         where TConfig : class
     {
         public RepositoryBase(IOptions<TConfig> config, ILogger<TRepository> logger) : base(config)
