@@ -18,12 +18,14 @@ limitations under the License.
  * ------------------------------------------------------------------------- */
 
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace thZero.Data.Repository
 {
-    public abstract class RepositoryLoggableBase<TService> : RepositoryBase
+    public abstract class RepositoryLoggableBase<TConfig, TService> : RepositoryBase<TConfig>
+        where TConfig : class
     {
-        public RepositoryLoggableBase(ILogger<TService> logger)
+        public RepositoryLoggableBase(IOptions<TConfig> config, ILogger<TService> logger) : base(config)
         {
             Logger = logger;
         }

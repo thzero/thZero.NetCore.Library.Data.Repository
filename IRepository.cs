@@ -21,10 +21,5 @@ namespace thZero.Data.Repository
 {
     public interface IRepository
     {
-        void Initialize(IRepositoryConnectionConfiguration connectionConfiguration);
-    }
-
-    public interface IRepositoryConnectionConfiguration
-    {
     }
 }
