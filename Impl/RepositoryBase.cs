@@ -85,9 +85,26 @@ namespace thZero.Data.Repository
             return (IInstrumentationPacket)(provider ?? GetService(provider, typeof(IInstrumentationPacket)));
         }
 
+        protected bool IsSuccess(SuccessResponse response)
+        {
+            return (response != null) && response.Success;
+        }
+
         protected SuccessResponse Success()
         {
             return new SuccessResponse();
+        }
+
+        protected SuccessResponse Success(bool success)
+        {
+            return new SuccessResponse(success);
+        }
+
+        protected SuccessResponse Success(bool success, string message)
+        {
+            SuccessResponse response = new SuccessResponse(success);
+            response.AddError(message);
+            return response;
         }
         #endregion
 
