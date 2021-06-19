@@ -102,7 +102,7 @@ namespace thZero.Data.Repository
 
         protected SuccessResponse Success(bool success, string message)
         {
-            SuccessResponse response = new SuccessResponse(success);
+            SuccessResponse response = new(success);
             response.AddError(message);
             return response;
         }
