@@ -32,18 +32,28 @@ namespace thZero.Data.Repository
     {
         public RepositoryBase(IOptions<TConfig> config)
         {
+            Enforce.AgainstNull(() => config);
+
             Config = config.Value;
+            Enforce.AgainstNull(() => Config);
         }
 
         #region Protected Methods
-        protected ErrorResponse Error()
+        protected ErrorResponse Error(IInstrumentationPacket instrumentation = null)
         {
-            return new ErrorResponse();
+            return new ErrorResponse(instrumentation);
         }
 
         protected ErrorResponse Error(string message, params object[] args)
         {
             ErrorResponse error = new();
+            error.AddError(message, args);
+            return error;
+        }
+
+        protected ErrorResponse Error(IInstrumentationPacket instrumentation, string message, params object[] args)
+        {
+            ErrorResponse error = new(instrumentation);
             error.AddError(message, args);
             return error;
         }
@@ -55,9 +65,26 @@ namespace thZero.Data.Repository
             return result;
         }
 
+        protected TResult Error<TResult>(IInstrumentationPacket instrumentation, TResult result)
+             where TResult : SuccessResponse
+        {
+            result.Instrumentation = instrumentation;
+            result.Success = false;
+            return result;
+        }
+
         protected TResult Error<TResult>(TResult result, string message, params object[] args)
              where TResult : SuccessResponse
         {
+            result.AddError(message, args);
+            result.Success = false;
+            return result;
+        }
+
+        protected TResult Error<TResult>(IInstrumentationPacket instrumentation, TResult result, string message, params object[] args)
+             where TResult : SuccessResponse
+        {
+            result.Instrumentation = instrumentation;
             result.AddError(message, args);
             result.Success = false;
             return result;
@@ -90,9 +117,9 @@ namespace thZero.Data.Repository
             return (response != null) && response.Success;
         }
 
-        protected SuccessResponse Success()
+        protected SuccessResponse Success(IInstrumentationPacket instrumentation = null)
         {
-            return new SuccessResponse();
+            return new SuccessResponse(instrumentation);
         }
 
         protected SuccessResponse Success(bool success)
@@ -100,9 +127,21 @@ namespace thZero.Data.Repository
             return new SuccessResponse(success);
         }
 
+        protected SuccessResponse Success(IInstrumentationPacket instrumentation, bool success)
+        {
+            return new SuccessResponse(instrumentation, success);
+        }
+
         protected SuccessResponse Success(bool success, string message)
         {
             SuccessResponse response = new(success);
+            response.AddError(message);
+            return response;
+        }
+
+        protected SuccessResponse Success(IInstrumentationPacket instrumentation, bool success, string message)
+        {
+            SuccessResponse response = new(instrumentation, success);
             response.AddError(message);
             return response;
         }
