@@ -90,6 +90,25 @@ namespace thZero.Data.Repository
             return result;
         }
 
+        protected TResult Error<TResult, TResult2>(TResult result, TResult2 result2)
+             where TResult : SuccessResponse
+             where TResult2 : SuccessResponse
+        {
+            result.AddErrors(result2.Messages);
+            result.Success = false;
+            return result;
+        }
+
+        protected TResult Error<TResult, TResult2>(IInstrumentationPacket instrumentation, TResult result, TResult2 result2)
+             where TResult : SuccessResponse
+             where TResult2 : SuccessResponse
+        {
+            result.Instrumentation = instrumentation;
+            result.AddErrors(result2.Messages);
+            result.Success = false;
+            return result;
+        }
+
         /// <summary>
         /// Get a service via service locator; this is an anti-pattern so use with caution.
         /// </summary>
@@ -146,7 +165,6 @@ namespace thZero.Data.Repository
             return response;
         }
         #endregion
-
 
         #region Protected Properties
         protected TConfig Config { get; private set; }
