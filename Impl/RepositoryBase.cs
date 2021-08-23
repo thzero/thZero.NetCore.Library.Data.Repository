@@ -131,6 +131,11 @@ namespace thZero.Data.Repository
             return (IInstrumentationPacket)(provider ?? GetService(provider, typeof(IInstrumentationPacket)));
         }
 
+        protected bool IsFailure(SuccessResponse response)
+        {
+            return !IsSuccess(response);
+        }
+
         protected bool IsSuccess(SuccessResponse response)
         {
             return (response != null) && response.Success;
