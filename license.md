@@ -1,5 +1,5 @@
 thZero.NetCore.Library.Data.Repository
-Copyright (C) 2016-2021 thZero.com
+Copyright (C) 2016-2022 thZero.com
 
 <development [at] thzero [dot] com>
 
