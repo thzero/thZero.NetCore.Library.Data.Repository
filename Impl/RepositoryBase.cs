@@ -115,7 +115,7 @@ namespace thZero.Data.Repository
         /// <param name="provider"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        protected object? GetService(IServiceProvider provider, Type type)
+        protected object GetService(IServiceProvider provider, Type type)
         {
             return provider ?? provider.GetService(type);
         }
